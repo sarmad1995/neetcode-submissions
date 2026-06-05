@@ -1,0 +1,23 @@
+class Solution {
+    /**
+     * @param {number[]} nums
+     * @param {number} k
+     * @return {boolean}
+     */
+    containsNearbyDuplicate(nums, k) {
+        let set = new Set();
+        let l = 0;
+        for(let r = 0; r<nums.length; r++) {
+            if(Math.abs(l - r) <= k) {
+                l++;
+                set.remove(nums[l])
+            }
+
+            if(set.has(nums[i])) {
+                return true;
+            }
+            set.add(nums[i])
+        }
+        return false;
+    }
+}
